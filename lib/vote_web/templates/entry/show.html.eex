@@ -1,0 +1,18 @@
+<h2>Show Entry</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @entry.name %>
+  </li>
+
+  <li>
+    <strong>Count:</strong>
+    <%= @entry.count %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: entry_path(@conn, :edit, @entry) %></span>
+<span><%= link "Back", to: entry_path(@conn, :index) %></span>
