@@ -18,6 +18,7 @@ defmodule VoteWeb.Router do
 
     get "/", PageController, :index
     get "/vote", VoteController, :index
+    post "/vote", VoteController, :update
     resources "/entrys", EntryController
   end
 

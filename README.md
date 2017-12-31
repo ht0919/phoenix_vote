@@ -1,8 +1,7 @@
 ## 概要
 
 - Phoenixによる投票システムの作例です。
-- 今回は『犬派と猫派の総選挙』という題目で作成しています。
-- 現時点では投票処理は未完成で鋭意作成中です。
+- 今回は『犬派と猫派の総選挙』という標題で作成しています。
 
 
 ## 動作環境(バージョン)
@@ -48,13 +47,17 @@
 - mix ecto.migrate
 - mix phx.server
 - ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
-- 初期データとして「犬派」と「猫派」をそれぞれ登録する
+- 初期データとして「犬派」と「猫派」をそれぞれ0件として登録する
 
 ## 投票ページ (index)の追加
 
 - ルートの追加
   - lib/vote_web/router.exの編集
     - 20行目に『get "/vote", VoteController, :index』を追加
+    - 21行目に『post "/vote", VoteController, :update』を追加
+- Cross Site Forgery Protection エラーの対策
+  - lib/vote_web/views/vote_view.exの編集
+    - 3行目に『import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]』を追加
 - コントローラーの追加
   - lib/vote_web/controllers/vote_controller.ex
 - ビューの追加
