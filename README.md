@@ -53,14 +53,14 @@
 
 ## 投票ページ (index)の追加
 
-1. ルートの追加
+- ルートの追加
   - lib/vote_web/router.exの編集
     - 20行目に『get "/vote", VoteController, :index』を追加
-2. コントローラーの追加
+- コントローラーの追加
   - lib/vote_web/controllers/vote_controller.ex
-3. ビューの追加
+- ビューの追加
   - lib/vote_web/views/vote_view.ex
-4. テンプレートの追加
+- テンプレートの追加
   - lib/vote_web/templates/vote/index.html.exx
-5. 動作確認
+- 動作確認
   - ブラウザで『http://localhost:4000/vote』を表示
