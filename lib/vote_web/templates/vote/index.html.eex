@@ -1,0 +1,16 @@
+<h1>犬派か猫派の総選挙</h1>
+<h3>あなたはどっち派？</h3>
+<form method="GET" action="entry.php">
+  <table border="1" width="320">
+    <tr align="center">
+      <td>派閥</td><td>投票数</td><td>選択</td>
+    </tr>
+    <tr align="center">
+      <td>犬派</td><td>0</td><td><input type="radio" name="name" value="犬派"></td>
+    </tr>
+    <tr align="center">
+      <td>猫派</td><td>0</td><td><input type="radio" name="name" value="猫派"></td>
+    </tr>
+  </table>
+  <input type="submit" value="投票する">
+</form>
