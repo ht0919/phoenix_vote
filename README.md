@@ -1,7 +1,7 @@
 ## 概要
 
 - Phoenixによる投票システムの作例です。
-- 今回は『犬派とネコ派の総選挙』という題目で作成しています。
+- 今回は『犬派と猫派の総選挙』という題目で作成しています。
 - 現時点では投票処理は未完成で鋭意作成中です。
 
 
@@ -38,8 +38,7 @@
 - cd vote
 - mix ecto.create
 - mix phx.server
-- ブラウザで『http://localhost:4000』を表示
-
+- ブラウザで[http://localhost:4000/](http://localhost:4000/)を表示
 
 ## エントリーページ (CRUD)の追加
 
@@ -48,8 +47,8 @@
   - 20行目に『resources "/entrys", EntryController』を追加
 - mix ecto.migrate
 - mix phx.server
-- ブラウザで『http://localhost:4000/vote』を表示
-
+- ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
+- 初期データとして「犬派」と「猫派」をそれぞれ登録する
 
 ## 投票ページ (index)の追加
 
@@ -63,4 +62,4 @@
 - テンプレートの追加
   - lib/vote_web/templates/vote/index.html.exx
 - 動作確認
-  - ブラウザで『http://localhost:4000/vote』を表示
+  - ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
