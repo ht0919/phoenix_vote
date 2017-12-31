@@ -30,6 +30,10 @@
 - 派閥登録 → [http://localhost:4000/entrys](http://localhost:4000/entrys)
 - ログイン → [http://localhost:4000/vote](http://localhost:4000/vote)
 
+## 実行時のイメージ
+
+![img01.png](https://raw.githubusercontent.com/ht0919/phoenix_vote/master/images/img01.png)
+
 
 ## 投票プロジェクトの作成手順
 
