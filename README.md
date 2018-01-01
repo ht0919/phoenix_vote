@@ -16,12 +16,13 @@
 
 ## 起動方法
 
-- git clone https://github.com/ht0919/phoenix_vote
+- git clone https://github.com/ht0919/phoenix_vote.git
 - cd phoenix_vote
 - mix deps.get
 - npm install
 - mix ecto.create
 - mix ecto.migrate
+- cd assets && npm install && cd ..
 - mix phx.server
 
 
