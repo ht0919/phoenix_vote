@@ -22,7 +22,7 @@
 - npm install
 - mix ecto.create
 - mix ecto.migrate
-- mix phoenix.server
+- mix phx.server
 
 
 ## 各機能のURL
