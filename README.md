@@ -29,7 +29,7 @@
 ## 各機能のURL
 
 - 派閥登録 → [http://localhost:4000/entrys](http://localhost:4000/entrys)
-- ログイン → [http://localhost:4000/vote](http://localhost:4000/vote)
+- 投票ページ → [http://localhost:4000/vote](http://localhost:4000/vote)
 
 ## 実行時のイメージ
 
@@ -54,6 +54,9 @@
 - ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
 - 初期データとして「犬派」と「猫派」をそれぞれ0件として登録する
 
+![img02.png](https://raw.githubusercontent.com/ht0919/phoenix_vote/master/images/img02.png)
+
+
 ## 投票ページ (index)の追加
 
 - ルートの追加
@@ -71,3 +74,18 @@
   - lib/vote_web/templates/vote/index.html.exx
 - 動作確認
   - ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
+
+
+## 今後の予定（選挙システムに向けた構想）
+
+- 投票ページのAjax化
+  - 投票数のみをAjaxで更新する
+- 住民登録機能の追加
+  - 選挙に参加するユーザの登録
+  - ログイン処理
+- 選挙管理機能の追加
+  - 選挙の登録
+  - 選挙管理人の登録
+  - 立候補者の登録
+  - 住民への投票チケット発行
+  - 重複投票の排除
