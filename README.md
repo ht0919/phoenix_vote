@@ -63,15 +63,63 @@
   - lib/vote_web/router.exの編集
     - 20行目に『get "/vote", VoteController, :index』を追加
     - 21行目に『post "/vote", VoteController, :update』を追加
-- Cross Site Forgery Protection エラーの対策
-  - lib/vote_web/views/vote_view.exの編集
-    - 3行目に『import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]』を追加
 - コントローラーの追加
   - lib/vote_web/controllers/vote_controller.ex
-- ビューの追加
+
+    ```
+    defmodule VoteWeb.VoteController do
+      use VoteWeb, :controller
+
+      alias Vote.User
+
+      def index(conn, _params) do
+        entrys = User.list_entrys()
+        render(conn, "index.html", entrys: entrys)
+      end
+
+      def update(conn, %{"id" => id}) do
+        entry = User.get_entry!(id)
+        entry_params = %{ name: entry.name, count: entry.count+1 }
+        User.update_entry(entry, entry_params)
+        entrys = User.list_entrys()
+        render(conn, "index.html", entrys: entrys)
+      end
+
+    end
+    ```
+
+- ビューの追加(Cross Site Forgery Protection エラー対策)
   - lib/vote_web/views/vote_view.ex
+
+    ```
+    defmodule VoteWeb.VoteView do
+      use VoteWeb, :view
+      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+    end
+    ```
+
 - テンプレートの追加
   - lib/vote_web/templates/vote/index.html.exx
+
+    ```
+    <h1>犬派か猫派の総選挙</h1>
+    <h3>あなたはどっち派？</h3>
+    <%= form_tag("/vote", method: :post) %>
+      <table border="1" width="320">
+        <tr align="center">
+          <td>派閥</td><td>投票数</td><td>選択</td>
+        </tr>
+        <%= for entry <- @entrys do %>
+          <tr align="center">
+            <td><%= entry.name %></td><td><%= entry.count %></td>
+            <td><input type="radio" name="id" value="<%= entry.id %>"></td>
+          </tr>
+        <% end %>
+      </table>
+      <input type="submit" value="投票する">
+    </form>
+    ```
+
 - 動作確認
   - ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
 
