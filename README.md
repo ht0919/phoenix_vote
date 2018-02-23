@@ -51,7 +51,7 @@
   - 20行目に『resources "/entrys", EntryController』を追加
 - mix ecto.migrate
 - mix phx.server
-- ブラウザで[http://localhost:4000/vote](http://localhost:4000/vote)を表示
+- ブラウザで[http://localhost:4000/entrys](http://localhost:4000/entrys)を表示
 - 初期データとして「犬派」と「猫派」をそれぞれ0件として登録する
 
 ![img02.png](https://raw.githubusercontent.com/ht0919/phoenix_vote/master/images/img02.png)
@@ -99,7 +99,7 @@
     ```
 
 - テンプレートの追加
-  - lib/vote_web/templates/vote/index.html.exx
+  - lib/vote_web/templates/vote/index.html.eex
 
     ```
     <h1>犬派か猫派の総選挙</h1>
